@@ -1,6 +1,6 @@
 // This class represents a single diary entry
 public class DiaryEntry {
-    // INSTANCE VARIABLES
+    // DECLARE VARIABLES
     private int entryId;
     private String title;
     private String date;
