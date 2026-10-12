@@ -18,12 +18,13 @@ public class DiaryMain {
 
     // MAIN METHOD | Entry point of the program
     public static void main(String[] args) {
+        Diary diary = new Diary(new ArrayList<>());
         DiaryMain diaryMain = new DiaryMain();
-        diaryMain.displayMenu();
+        diaryMain.menuSelection(diary);
     }
 
     // MENU SELECTION | Call the appropriate method based on user input
-    public void menuSelection(int input) {
+    public void menuSelection(Diary diary) {
         // open menu selection
         while (true) {
             // select option
@@ -36,7 +37,7 @@ public class DiaryMain {
             if (option == 1) {
                 System.out.println("Option 1 Selected: Enter a new diary page");
                 System.out.println("===========================================");
-                // Call method to enter a new diary page
+                diary.addEntry(scan); // Call method to add a new diary entry
             } else if (option == 2) {
                 System.out.println("Option 2 Selected: View diary pages");
                 System.out.println("=====================================");
