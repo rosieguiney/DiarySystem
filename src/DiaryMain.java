@@ -41,7 +41,7 @@ public class DiaryMain {
             } else if (option == 2) {
                 System.out.println("Option 2 Selected: View diary pages");
                 System.out.println("=====================================");
-                // Call method to view diary pages
+                diary.viewEntries(); // Call method to view diary pages
             } else if (option == 3) {
                 System.out.println("Option 3 Selected: Modify a diary page");
                 System.out.println("========================================");

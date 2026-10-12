@@ -46,8 +46,8 @@ public class DiaryEntry {
 
     // TOSTRING METHOD | Returns a string representation of the diary entry
     public String toString() {
-        return "Entry ID: " + entryId + "| Title: " + title +
-                "| Date: " + date + "| Content: " + content;
+        return "Entry ID: " + entryId + " | Title: " + title +
+                " | Date: " + date + " | Content: " + content;
     }
 
 }

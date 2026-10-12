@@ -34,6 +34,15 @@ public class Diary {
 
     // VIEW ENTRIES | Method to view all diary entries
     // -------------------------------------------------
+    public void viewEntries() {
+        if (diaryEntries.isEmpty()) {
+            System.out.println("No diary entries found.");
+        } else {
+            for (DiaryEntry entry : diaryEntries) {
+                System.out.println(entry.toString());
+            }
+        }
+    }
 
     // MODIFY ENTRY | Method to modify an existing diary entry
     // ---------------------------------------------------------
