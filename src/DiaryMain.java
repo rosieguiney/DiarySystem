@@ -1,4 +1,5 @@
 import java.util.*;
+
 // This is the main class that contains the menu and the main method to run the diary application
 public class DiaryMain {
     // INSTANCE VARIABLES
@@ -18,7 +19,8 @@ public class DiaryMain {
 
     // MAIN METHOD | Entry point of the program
     public static void main(String[] args) {
-        Diary diary = new Diary(new ArrayList<>());
+        ArrayList<DiaryEntry> diaryEntries = FileManaging.readFile(); // Read diary entries from file
+        Diary diary = new Diary(diaryEntries);
         DiaryMain diaryMain = new DiaryMain();
         diaryMain.menuSelection(diary);
     }
@@ -53,6 +55,8 @@ public class DiaryMain {
             } else if (option == 5) {
                 System.out.println("Option 5 Selected: Exit");
                 System.out.println("=========================");
+                System.out.println("Saving diary entries to file...");
+                FileManaging.saveFile(diary.getDiaryEntries()); // Save diary entries to file
                 System.out.println("Exiting the diary application. Goodbye!");
                 System.exit(0); // exit the program
             } else {

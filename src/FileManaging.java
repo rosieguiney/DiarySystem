@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class fileManaging {
+public class FileManaging {
     // SAVE FILE | Method to save a file
     public static void saveFile(ArrayList<DiaryEntry> diaryEntries) {
         // Try / catch to handle errors
