@@ -41,22 +41,37 @@ public class DiaryMain {
                 System.out.println("Option 1 Selected: Enter a new diary page");
                 System.out.println("===========================================");
                 diary.addEntry(scan); // Call method to add a new diary entry
+                System.out.println("===========================================");
+                System.out.print("Click ENTER to return to menu");
+                scan.nextLine();
             } else if (option == 2) {
                 System.out.println("Option 2 Selected: View diary pages");
                 System.out.println("=====================================");
                 diary.viewEntries(); // Call method to view diary pages
+                System.out.println("=====================================");
+                System.out.print("Click ENTER to return to menu");
+                scan.nextLine();
             } else if (option == 3) {
                 System.out.println("Option 3 Selected: Modify a diary page");
                 System.out.println("========================================");
                 // Call method to modify a diary page
+                System.out.println("========================================");
+                System.out.print("Click ENTER to return to menu");
+                scan.nextLine();
             } else if (option == 4) {
                 System.out.println("Option 4 Selected: Search for a diary page");
                 System.out.println("============================================");
                 diary.searchEntry(scan); // Call method to search for a diary page
+                System.out.println("============================================");
+                System.out.print("Click ENTER to return to menu");
+                scan.nextLine();
             } else if (option == 5) {
                 System.out.println("Option 5 Selected: Delete a diary page");
                 System.out.println("=========================================");
                 // Call method to delete a diary page
+                System.out.println("=========================================");
+                System.out.print("Click ENTER to return to menu");
+                scan.nextLine();
             } else if (option == 6) {
                 System.out.println("Option 6 Selected: Exit");
                 System.out.println("=========================");

@@ -50,12 +50,13 @@ public class Diary {
     // SEARCH ENTRY | Method to search for a diary entry by date or entry ID
     // -----------------------------------------------------------------------
     public void searchEntry(Scanner scan) {
-        int option = scan.nextInt();
+        int option;
         boolean found = false;
         // Loop until user selects a valid option
         while (true) {
             System.out.println("Do you want to search by [1] Date or [2] Entry ID?");
             option = scan.nextInt();
+            scan.nextLine(); // consume newline
             if (option == 1 || option == 2) {
                 break;
             }
@@ -65,7 +66,7 @@ public class Diary {
         // Search by date
         if (option == 1) {
             System.out.print("Enter date (DD-MM-YYYY): ");
-            String date = scan.next();
+            String date = scan.nextLine();
             // Search through diary entries for matching date
             for (DiaryEntry entry : diaryEntries) {
                 if (entry.getDate().equals(date)) {
@@ -73,9 +74,12 @@ public class Diary {
                     found = true;
                 }
             }
-        } else if (option == 2) {
+        }
+        // Search by entry ID
+        else if (option == 2) {
             System.out.print("Enter entry ID: ");
             int entryId = scan.nextInt();
+            scan.nextLine(); // consume newline
             // Search through diary entries for matching entry ID
             for (DiaryEntry entry : diaryEntries) {
                 if (entry.getEntryId() == entryId) {
