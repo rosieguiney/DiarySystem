@@ -12,8 +12,9 @@ public class DiaryMain {
         System.out.println("1. Enter a new diary page");
         System.out.println("2. View diary pages");
         System.out.println("3. Modify a diary page");
-        System.out.println("4. Delete a diary page");
-        System.out.println("5. Exit");
+        System.out.println("4. Search for a diary page");
+        System.out.println("5. Delete a diary page");
+        System.out.println("6. Exit");
         System.out.println("=========================");
     }
 
@@ -49,11 +50,15 @@ public class DiaryMain {
                 System.out.println("========================================");
                 // Call method to modify a diary page
             } else if (option == 4) {
-                System.out.println("Option 4 Selected: Delete a diary page");
+                System.out.println("Option 4 Selected: Search for a diary page");
+                System.out.println("============================================");
+                diary.searchEntry(scan); // Call method to search for a diary page
+            } else if (option == 5) {
+                System.out.println("Option 5 Selected: Delete a diary page");
                 System.out.println("=========================================");
                 // Call method to delete a diary page
-            } else if (option == 5) {
-                System.out.println("Option 5 Selected: Exit");
+            } else if (option == 6) {
+                System.out.println("Option 6 Selected: Exit");
                 System.out.println("=========================");
                 System.out.println("Saving diary entries to file...");
                 FileManaging.saveFile(diary.getDiaryEntries()); // Save diary entries to file

@@ -13,6 +13,7 @@ public class DiaryEntry {
         this.title = title;
         this.date = date;
         this.content = content;
+        numberOfEntries++;
     }
 
     // GETTERS AND SETTERS

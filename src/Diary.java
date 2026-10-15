@@ -49,6 +49,45 @@ public class Diary {
 
     // SEARCH ENTRY | Method to search for a diary entry by date or entry ID
     // -----------------------------------------------------------------------
+    public void searchEntry(Scanner scan) {
+        int option = scan.nextInt();
+        boolean found = false;
+        // Loop until user selects a valid option
+        while (true) {
+            System.out.println("Do you want to search by [1] Date or [2] Entry ID?");
+            option = scan.nextInt();
+            if (option == 1 || option == 2) {
+                break;
+            }
+            System.out.println("Invalid option. Please try again.");
+        }
+        
+        // Search by date
+        if (option == 1) {
+            System.out.print("Enter date (DD-MM-YYYY): ");
+            String date = scan.next();
+            // Search through diary entries for matching date
+            for (DiaryEntry entry : diaryEntries) {
+                if (entry.getDate().equals(date)) {
+                    System.out.println(entry.toString());
+                    found = true;
+                }
+            }
+        } else if (option == 2) {
+            System.out.print("Enter entry ID: ");
+            int entryId = scan.nextInt();
+            // Search through diary entries for matching entry ID
+            for (DiaryEntry entry : diaryEntries) {
+                if (entry.getEntryId() == entryId) {
+                    System.out.println(entry.toString());
+                    found = true;
+                }
+            }
+        }
+        if (!found) {
+            System.out.println("No diary entries found for the given date.");
+        }
+    }
 
     // DELETE ENTRY | Method to delete a diary entry
     // -----------------------------------------------
