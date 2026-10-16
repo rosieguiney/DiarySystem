@@ -68,7 +68,7 @@ public class DiaryMain {
             } else if (option == 5) {
                 System.out.println("Option 5 Selected: Delete a diary page");
                 System.out.println("=========================================");
-                // Call method to delete a diary page
+                diary.deleteEntry(scan);// Call method to delete a diary page
                 System.out.println("=========================================");
                 System.out.print("Click ENTER to return to menu");
                 scan.nextLine();

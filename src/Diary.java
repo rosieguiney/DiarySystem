@@ -95,5 +95,24 @@ public class Diary {
 
     // DELETE ENTRY | Method to delete a diary entry
     // -----------------------------------------------
+    public void deleteEntry(Scanner scan) {
+        boolean removed = false;
+        System.out.print("Enter entry ID to delete: ");
+        int entryId = scan.nextInt();
+        scan.nextLine(); // consume newline
+        // Search through diary entries for matching entry ID and remove it
+        for (DiaryEntry entry: diaryEntries) {
+            if (entry.getEntryId() == entryId) {
+                diaryEntries.remove(entry);
+                System.out.println("Diary entry deleted successfully!");
+                removed = true;
+                break;
+            }
+        }
+        // if removed is false, then no entry was found with the given ID
+        if (!removed) {
+            System.out.println("No diary entry found with the given ID.");
+        }
+    }
 
 }
