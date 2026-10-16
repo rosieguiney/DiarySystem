@@ -26,8 +26,16 @@ public class Diary {
         System.out.print("Enter content: ");
         content = scan.nextLine();
 
+        // Use the highest existing ID so deleted IDs are not reused.
+        int nextEntryId = 1;
+        for (DiaryEntry entry : diaryEntries) {
+            if (entry.getEntryId() >= nextEntryId) {
+                nextEntryId = entry.getEntryId() + 1;
+            }
+        }
+
         // Create new diary entry and add to list
-        DiaryEntry newEntry = new DiaryEntry(title, date, content);
+        DiaryEntry newEntry = new DiaryEntry(nextEntryId, title, date, content);
         diaryEntries.add(newEntry);
         System.out.println("Diary entry added successfully!");
     }

@@ -7,7 +7,7 @@ public class FileManaging {
         try {
             // Create print writer
             PrintWriter diaryFile = new PrintWriter(new FileWriter("DiaryEntries.txt"));
-            // Put diary data into the diary file
+            // Put diary entries into the diary file
             for (DiaryEntry entry : diaryEntries) {
                 diaryFile.println(entry.getEntryId() + ", " + entry.getTitle()
                         + ", " + entry.getDate() + ", " + entry.getContent());
@@ -30,13 +30,17 @@ public class FileManaging {
             // Read each line from the file and create a DiaryEntry object
             while (fileScan.hasNextLine()) {
                 String line = fileScan.nextLine();
+                if (line.trim().isEmpty()) {
+                    continue;
+                }
                 String[] data = line.split(", ");
 
+                int entryId = Integer.parseInt(data[0]);
                 String title = data[1];
                 String date = data[2];
                 String content = data[3];
 
-                DiaryEntry entry = new DiaryEntry(title, date, content);
+                DiaryEntry entry = new DiaryEntry(entryId, title, date, content);
                 diaryEntries.add(entry);
             }
             fileScan.close();

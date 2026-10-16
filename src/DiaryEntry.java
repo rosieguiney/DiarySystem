@@ -5,15 +5,13 @@ public class DiaryEntry {
     private String title;
     private String date;
     private String content;
-    private int numberOfEntries = 0;
 
     // CONSTRUCTOR
-    public DiaryEntry(String title, String date, String content) {
-        this.entryId = ++numberOfEntries;
+    public DiaryEntry(int entryId, String title, String date, String content) {
+        this.entryId = entryId;
         this.title = title;
         this.date = date;
         this.content = content;
-        numberOfEntries++;
     }
 
     // GETTERS AND SETTERS
